@@ -111,7 +111,7 @@ def split_vg_json_reads_into_chromosomes(args):
     def get_mapped_chrom(node):
         mapped_chrom = None
         for chrom in chromosomes:
-            if node >= chromosome_limits[chrom][0] and node <= chromosome_limits[chrom][1]:
+            if chrom != 'unmapped' and node >= chromosome_limits[chrom][0] and node <= chromosome_limits[chrom][1]:
                 mapped_chrom = chrom
                 break
         return mapped_chrom
